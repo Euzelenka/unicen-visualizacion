@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel= "stylesheet"
+      href="css/estilo.css"
+      type="text/css"
+     />
+    <meta charset="utf-8">
+    <title>Editor de fotos</title>
+  </head>
+  <body>
+    <h1 class="centrar">Aplicá filtros a tus imágenes</h1>
+
+    <div class="centrar">
+      <canvas id="canvas" width="800" height="533" style="border:#000 solid 1px;" />
+    </div>
+    <div class="centrar">
+      <input type="file" id="selectedFile" />
+      <a href="#" id="guardar" download="foto.png"><button type="button" class="btn btn-outline-secondary" name="guardar">Guardar</button></a>
+      <button id="brillo" type="button" class="btn btn-outline-secondary" onclick="filtroBrillo()">Brillo</button>
+      <button id="negativo" type="button" class="btn btn-outline-secondary" onclick="filtroNegativo()">Negativo</button>
+      <button id="sepia" type="button" class="btn btn-outline-secondary" onclick="filtroSepia()">Sepia</button>
+      <button id="binarizacion" type="button" class="btn btn-outline-secondary" onclick="filtroBinarizacion()">Binarización</button>
+      <button id="filtro1" type="button" class="btn btn-outline-secondary">filtro1</button>
+      <button id="filtro2" type="button" class="btn btn-outline-secondary">filtro2</button>
+    </div>
+  </body>
+  <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="js/filtros.js"></script>
+</html>
