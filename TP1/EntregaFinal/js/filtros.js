@@ -1,38 +1,38 @@
 
 var ctx = document.getElementById("canvas").getContext("2d");
+var canvas = document.getElementById("canvas");
+var img = new Image();
+var imgRestablecer = new Image();
 
-var image = new Image();
 
 function myDrawImageMethod(image) {
   ctx.drawImage(image, 0, 0);
 }
 
-$(function() {
-    $('#selectedFile').change(function(e) {
-        var file = e.target.files[0],
-            imageType = /image.*/;
+function restablecer() {
+  myDrawImageMethod(imgRestablecer,ctx,document.getElementById("canvas").width,document.getElementById("canvas").height );
+}
 
-        if (!file.type.match(imageType))
-            return;
+function inicializar() {
+  var inputFile = document.getElementById('selectedFile');
+  inputFile.addEventListener('change', cargarImagen, false);
+}
 
-        var reader = new FileReader();
-        reader.onload = fileOnload;
-        reader.readAsDataURL(file);
-
-    });
-
-    function fileOnload(e) {
-        var img = new Image();
-        img.src =  e.target.result;
-        var canvas = $('#canvas')[0];
-        var context = canvas.getContext('2d');
-
-        img.load(function() {
-            ctx.drawImage(this, 0, 0);
-        });
+function cargarImagen(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    img = document.getElementById('imgCanvas');
+    img.src = event.target.result;
+    imgRestablecer.src = img.src;
+    img.onload = function(){
+      canvas.width = img.width;
+      canvas.height = img.height;
+      myDrawImageMethod(img);
     }
-});
-
+  }
+  reader.readAsDataURL(file);
+}
 
 function getRed(imageData, x, y) {
   index = (x + y * imageData.width) *4;
@@ -57,9 +57,7 @@ function setPixel(imageData, x, y, r, g, b) {
 }
 
 function filtroBrillo() {
-  var ctx = document.getElementById("canvas").getContext("2d");
-  myDrawImageMethod(this);
-  imageData = ctx.getImageData(0, 0, this.width, this.height);
+  imageData = ctx.getImageData(0, 0, img.width, img.height);
   var r,g,b;
   for (var i = 0; i < imageData.width; i++) {
     for (var j = 0; j < imageData.height; j++) {
@@ -73,7 +71,7 @@ function filtroBrillo() {
 }
 
 function filtroSepia() {
-  imageData = ctx.getImageData(0, 0, this.width, this.height);
+  imageData = ctx.getImageData(0, 0, img.width, img.height);
   var r,g,b;
   for (var i = 0; i < imageData.width; i++) {
     for (var j = 0; j < imageData.height; j++) {
@@ -87,7 +85,7 @@ function filtroSepia() {
 }
 
 function filtroNegativo() {
-  imageData = ctx.getImageData(0, 0, this.width, this.height);
+  imageData = ctx.getImageData(0, 0, img.width, img.height);
   var r,g,b;
   for (var i = 0; i < imageData.width; i++) {
     for (var j = 0; j < imageData.height; j++) {
@@ -101,7 +99,7 @@ function filtroNegativo() {
 }
 
 function filtroBinarizacion() {
-  imageData = ctx.getImageData(0, 0, this.width, this.height);
+  imageData = ctx.getImageData(0, 0, img.width, img.height);
   var r,g,b;
   for (var i = 0; i < imageData.width; i++) {
     for (var j = 0; j < imageData.height; j++) {
