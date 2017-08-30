@@ -125,19 +125,19 @@ function gradiente(mat) {
               getRed(imageData, i+1, j-1) * mat[0][2] + getRed(imageData, i-1, j) * mat[1][0] +
               getRed(imageData, i, j) * mat[1][1] + getRed(imageData, i+1, j) * mat[1][2] +
               getRed(imageData, i-1, j+1) * mat[2][0] + getRed(imageData, i, j-1) * mat[2][1] +
-              getRed(imageData, i+1, j+1) * mat[2][2])/9);
+              getRed(imageData, i+1, j+1) * mat[2][2]));
 
         var g = Math.floor((getGreen(imageData, i-1, j-1) * mat[0][0] + getGreen(imageData, i, j-1) * mat[0][1] +
               getGreen(imageData, i+1, j-1) * mat[0][2] + getGreen(imageData, i-1, j) * mat[1][0] +
               getGreen(imageData, i, j) * mat[1][1] + getGreen(imageData, i+1, j) * mat[1][2] +
               getGreen(imageData, i-1, j+1) * mat[2][0] + getGreen(imageData, i, j-1) * mat[2][1] +
-              getGreen(imageData, i+1, j+1) * mat[2][2])/9);
+              getGreen(imageData, i+1, j+1) * mat[2][2]));
 
       var b = Math.floor((getBlue(imageData, i-1, j-1) * mat[0][0] + getBlue(imageData, i, j-1) * mat[0][1] +
                getBlue(imageData, i+1, j-1) * mat[0][2] + getBlue(imageData, i-1, j) * mat[1][0] +
                getBlue(imageData, i, j) * mat[1][1] + getBlue(imageData, i+1, j) * mat[1][2] +
                getBlue(imageData, i-1, j+1) * mat[2][0] + getBlue(imageData, i, j-1) * mat[2][1] +
-               getBlue(imageData, i+1, j+1) * mat[2][2])/9);
+               getBlue(imageData, i+1, j+1) * mat[2][2]));
 
 
       setPixel(image2, i, j, r, g, b);
@@ -147,15 +147,15 @@ function gradiente(mat) {
 }
 
 function filtroBlur() {
-  var mat = [[1, 1, 1],
-             [1, 1, 1],
+  var mat = [[1, 1, 1];
+             [1, 1, 1];
              [1, 1, 1]];
   gradiente(mat);
 }
 
 function filtroDeteccionBordes() {
-  var mat = [[1, -1, -2],
-             [0, -2, -1],
+  var mat = [[0, -1, -2];
+             [0, -2, -1];
              [1, 2, -2]];
   gradiente(mat);
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pintar Fondo</title>
+  </head>
+  <body>
+    <div id="changeColor" style="background:black">
+      <canvas id="canvas" width="900" height="600" />
+    </div>
+  </body>
+  <script>
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var objeto = document.getElementById("changeColor");
+
+    //rosa
+    objeto.onmousemove = function changeFondo() {
+      objeto.style.backgroundColor = "#ff00ff";
+    }
+
+    //amarillo
+    objeto.onmousedown = function cambiarColor() {
+      objeto.style.backgroundColor = "#ffff00";
+    }
+
+    //rojo
+    objeto.onmouseup = function pintarFondo() {
+        objeto.style.backgroundColor = "#ff0000";
+    }
+  </script>
+</html>
