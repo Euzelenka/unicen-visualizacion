@@ -1,8 +1,4 @@
 class Circulo {
-  this.posX = 4;
-  this.posY = 4;
-  this.radio = 10;
-  this.color = '#141444';
 
   constructor(paramPosX, paramPosY, paramRadio, paramColor) {
     this.posX = paramPosX;
@@ -11,7 +7,12 @@ class Circulo {
     this.color = paramColor;
   }
 
-  Circulo.prototype.message = function() {
-    alert("Soy un puto circulo con radio: " + this.radio);
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.posX, this.posY, this.radio, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
   }
+
 }
