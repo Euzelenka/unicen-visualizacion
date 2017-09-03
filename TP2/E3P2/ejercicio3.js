@@ -1,5 +1,10 @@
-var ctx = document.getElementById("canvas").getContext("2d");
-var img = document.getElementById("img");
-var image = ctx.createPattern(img, "repeat");
-var cuadrado1 = new Cuadrado(400, 150, 300, image);
-cuadrado1.draw();
+function pintarConImagen(direccion) {
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  var img = document.getElementById("img");
+  var image = ctx.createPattern(img, direccion);
+  ctx.rect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = image;
+  ctx.fill();
+}
