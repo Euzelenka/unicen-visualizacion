@@ -1,12 +1,14 @@
 
 var ctx = document.getElementById("canvas").getContext("2d");
 var canvas = document.getElementById("canvas");
+var ctx2 = document.getElementById("canvas2").getContext("2d");
 var img = new Image();
 var imgRestablecer = new Image();
 
 
 function myDrawImageMethod(image) {
   ctx.drawImage(image, 0, 0);
+  ctx2.drawImage(image, 0, 0);
 }
 
 function restablecer() {
@@ -116,48 +118,59 @@ function filtroBinarizacion() {
   ctx.putImageData(imageData, 0, 0);
 }
 
-function gradiente(mat) {
-  imageData = ctx.getImageData(0, 0, img.width, img.height);
-  var image2 = ctx.createImageData(imageData.width, imageData.height);
-  for (var i = 1; i < imageData.width-1; i++) {
-      for (var j = 1; j < imageData.height-1; j++) {
-        var r = Math.floor((getRed(imageData, i-1 ,j-1) * mat[0][0] + getRed(imageData, i, j-1) * mat[0][1] +
-              getRed(imageData, i+1, j-1) * mat[0][2] + getRed(imageData, i-1, j) * mat[1][0] +
-              getRed(imageData, i, j) * mat[1][1] + getRed(imageData, i+1, j) * mat[1][2] +
-              getRed(imageData, i-1, j+1) * mat[2][0] + getRed(imageData, i, j-1) * mat[2][1] +
-              getRed(imageData, i+1, j+1) * mat[2][2]));
+function convolver(mat, offset) {
+    var m = [].concat(mat[0], mat[1], mat[2]); // flatten
+		divisor = m.reduce(function(a, b) {return a + b;}) || 1; // sum
+    var olddata = ctx.getImageData(0, 0, img.width, img.height);
+    var oldpx = olddata.data;
+		var newdata = ctx2.createImageData(olddata);
+		var newpx = newdata.data
+		var len = newpx.length;
+		var res = 0;
+		var w = 800;
 
-        var g = Math.floor((getGreen(imageData, i-1, j-1) * mat[0][0] + getGreen(imageData, i, j-1) * mat[0][1] +
-              getGreen(imageData, i+1, j-1) * mat[0][2] + getGreen(imageData, i-1, j) * mat[1][0] +
-              getGreen(imageData, i, j) * mat[1][1] + getGreen(imageData, i+1, j) * mat[1][2] +
-              getGreen(imageData, i-1, j+1) * mat[2][0] + getGreen(imageData, i, j-1) * mat[2][1] +
-              getGreen(imageData, i+1, j+1) * mat[2][2]));
+		for (var i = 0; i < len; i++) {
+    if ((i + 1) % 4 === 0) {
+      newpx[i] = oldpx[i];
 
-      var b = Math.floor((getBlue(imageData, i-1, j-1) * mat[0][0] + getBlue(imageData, i, j-1) * mat[0][1] +
-               getBlue(imageData, i+1, j-1) * mat[0][2] + getBlue(imageData, i-1, j) * mat[1][0] +
-               getBlue(imageData, i, j) * mat[1][1] + getBlue(imageData, i+1, j) * mat[1][2] +
-               getBlue(imageData, i-1, j+1) * mat[2][0] + getBlue(imageData, i, j-1) * mat[2][1] +
-               getBlue(imageData, i+1, j+1) * mat[2][2]));
+    }
+		res = 0;
+	     var these = [
+	       oldpx[i - w * 4 - 4] || oldpx[i],
+	       oldpx[i - w * 4]     || oldpx[i],
+	       oldpx[i - w * 4 + 4] || oldpx[i],
+	       oldpx[i - 4]         || oldpx[i],
+	       oldpx[i],
+	       oldpx[i + 4]         || oldpx[i],
+	       oldpx[i + w * 4 - 4] || oldpx[i],
+	       oldpx[i + w * 4]     || oldpx[i],
+	       oldpx[i + w * 4 + 4] || oldpx[i]
+	     ];
+	     for (var j = 0; j < 9; j++) {
+	       res += these[j] * m[j];
+	     }
+	     res /= divisor;
+	     if (offset) {
+	       res += offset;
+	     }
+	     newpx[i] = res;
 
-
-      setPixel(image2, i, j, r, g, b);
-      }
   }
-  ctx.putImageData(image2, 0, 0);
-}
+  ctx.putImageData(newdata,0,0);
+	}
 
 function filtroBlur() {
-  var mat = [[1, 1, 1];
-             [1, 1, 1];
-             [1, 1, 1]];
-  gradiente(mat);
+  var mat = [[1, 2, 1],
+             [2, 4, 2],
+             [1, 2, 1]];
+  convolver(mat);
 }
 
 function filtroDeteccionBordes() {
-  var mat = [[0, -1, -2];
-             [0, -2, -1];
-             [1, 2, -2]];
-  gradiente(mat);
+  var mat = [[1, 1, 1],
+             [1, -7, 1],
+             [1, 1, 1]];
+  convolver(mat);
 }
 
 var button = document.getElementById('guardar');
