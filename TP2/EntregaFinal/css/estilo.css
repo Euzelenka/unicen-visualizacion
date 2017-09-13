@@ -1,3 +1,52 @@
 body {
-  background-image: url("img/images.jpg");
+  background-image: url("../img/image4.jpg");
+  background-size:cover;
+}
+
+.estilomov {
+	font-size:18px;
+	padding-left:20px;
+}
+
+#movimientos {
+	font-size: 60px;
+	margin-left:20px;
+	padding-left:28px;
+}
+
+.tablero {
+	background-color: #1e90dd;
+	border-radius: 5px;
+	color: white;
+	margin-top:40px;
+	margin-left:140px;
+	margin-right:50px;
+}
+
+.boton {
+  margin-left: 150px;
+  margin-top: 40px;
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+}
+
+.container-fluid {
+  width: 1100px;
+  height: 500px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+footer {
+  color: white;
+  text-align: center;
+}
+
+.alertaestilo{
+	position: absolute;
+	margin-top: 170px;
+	z-index: 1;
 }

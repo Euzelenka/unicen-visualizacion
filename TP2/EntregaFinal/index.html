@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel= "stylesheet"
       href="css/estilo.css"
@@ -8,13 +10,66 @@
     <meta charset="utf-8">
     <title>Torre de Hanoi</title>
   </head>
+
   <body>
-    <h1>A Jugar!</h1>
-    <canvas id="canvas" width="800" height="500"></canvas>
+        <h1 class="titulo">Torre De Hanoi</h1>
+    <div class="container-fluid">
+        
+      <div class="row">
+	  
+		<div class="col-md-8 alertaestilo">
+			<div id="alerta" class="alert alert-primary alert-dismissible fade show" style="display: none" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>FELICIDADES! Movimientos: <span id="mov"></span></p>
+          </div>
+
+          <div id="alerta2" class=" alert alert-danger alert-dismissible" style="display: none" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Error! Ese movimiento no se puede realizar</p>
+          </div>
+		</div>
+		
+        <div class="col-md-8">
+            <canvas id="canvas" width="1100" height="500"></canvas>
+        </div>
+
+        <div class="botonera col-md-4">
+          <div class="col-md-offset-4">
+              <button class="btn btn-success boton" type="button" name="button" onclick="jugar(2)">Play Easy!</button>
+          </div>
+
+          <div class="col-md-offset-4">
+              <button class="btn btn-success boton" type="button" name="button" onclick="jugar(3)">Play Medium!</button>
+          </div>
+
+          <div class="col-md-offset-4">
+              <button class="btn btn-success boton" type="button" name="button" onclick="jugar(5)">Play Hard!</button>
+          </div>
+		  <div class="col-md-offset-4">
+					<a href="https://image.slidesharecdn.com/torresdehanoi-140615233908-phpapp01/95/torres-de-hanoi-upsm-6-638.jpg?cb=1402875910"> <button class="btn btn-info boton" type="button" name="button">Instrucciones</button></a>
+				
+        </div>
+			<div class="col-md-offset-4 ">
+              <div class="tablero">
+				<p class="estilomov">Movimientos</p>
+				<p id="movimientos"></p>
+			  </div>
+          </div>
+
+      </div>
+
+
+    </div>
   </body>
+
   <script type="text/javascript" src="js/Torre.js"></script>
   <script type="text/javascript" src="js/Disco.js"></script>
   <script type="text/javascript" src="js/Hanoi.js"></script>
   <script type="text/javascript" src="js/Control.js"></script>
 
+  <footer>Zelenka Eugenia</footer>
 </html>
