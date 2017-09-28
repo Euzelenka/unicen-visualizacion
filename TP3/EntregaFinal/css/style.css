@@ -1,0 +1,257 @@
+body{
+	background-color: rgba(126, 122, 102, 0.06) !important;
+}
+
+.tachado {
+	text-decoration:line-through;
+}
+
+.barra {
+	margin: 10px;
+}
+.section-line {
+	border-bottom: 1px solid #a79d5d;
+}
+
+.precio-novProd {
+	font-size: 16px;
+	color: rgb(232, 83, 57);
+	font-weight: bold;
+	width: 100px;
+	margin: 0px;
+}
+
+.descrip {
+	margin-top: 15px;
+	font-size: 16px;
+	color: #a79d5d;
+}
+
+.text-novProd {
+	margin-right: 20px;
+}
+
+.title-prod {
+	margin-left: 10px;
+	color: #a79d5d;
+}
+
+.img-novProd {
+	width: 80px;
+	height: 80px;
+	margin-left: 40px;
+}
+
+.img-novProd2 {
+	width: 80px;
+	height: 80px;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+
+.btn-novedadesProductos {
+	background-color: rgb(222, 191, 61) !important;
+	color: white !important;
+	font-size: 16px !important;
+	margin: 0px;
+}
+
+.productosProd {
+	margin-left: 300px;
+}
+
+.novedadesProductos {
+	background-color: rgba(88, 85, 77, 0.18);
+	box-shadow: 0px 0px 6px rgba(27, 27, 28, 0.46);
+	border-radius: 10px;
+	margin: 10px 8px 10px 8px;
+	width: 1100px !important;
+	height: 200px;
+	padding: 15px;
+}
+
+.icon, .iconT {
+  height: 40px;
+  width: 40px;
+  padding: 3px;
+	margin: 10px 8px 0px 8px;
+}
+
+.navbar-default {
+	border: none !important;
+	margin-bottom: 5px !important;
+}
+
+.navList {
+	padding: 15px 100px 15px 90px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.navList:hover{
+	background-color: rgba(196, 192, 138, 0.33);
+}
+
+.navRigth{
+	padding: 19px 10px 10px 10px;
+}
+
+a{
+	padding: 0px !important;
+	color: #a79d5d !important;
+}
+
+.imgBanner {
+	width: 1140px;
+	height: 363px !important;
+}
+
+.logo{
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.imgPromo{
+	height: 200px !important;
+	margin-left: 55px;
+	margin-top: 15px;
+}
+
+.cart{
+	font-size: 33px;
+	color: rgb(101, 91, 47);
+	margin-top: 23px;
+}
+
+.search {
+	margin-top: 30px !important;
+}
+
+.comments{
+	width: 500px;
+	height: 370px;
+	margin-top: 10px;
+}
+.navLogo {
+	margin-top: 20px;
+	background-color: rgba(222, 191, 61, 0.6);
+	border-radius: 10px;
+}
+
+.promociones {
+	margin-top: 20px;
+	color: #a79d5d;
+}
+
+.tittle {
+	text-transform: uppercase;
+	padding-bottom: 20px;
+	color: #7c7865;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.promos {
+	/*border: 2px solid rgba(167, 157, 93, 0.28);*/
+	background-color: rgba(88, 85, 77, 0.18);
+	box-shadow: 0px 0px 5px 4px rgba(127, 130, 68, 0.56);
+	margin: 20px 10px 0px 10px;
+	width: 260px !important;
+	border-radius: 10px;
+	padding-bottom: 15px;
+}
+
+.promoProd{
+	width: 255px !important;
+	margin: 20px 10px 0px 10px;
+}
+.grilla {
+	margin-left: 10px;
+}
+
+.desc{
+	position: absolute;
+	width: 60px;
+	background-color: rgb(232, 83, 57);
+	color: white;
+	margin-top: 5px;
+	margin-left: 170px;
+	text-align: center;
+}
+.precio{
+	font-size: 18px;
+	color: #534d4c;
+	margin: 20px 0px 10px 0px;
+	font-weight: bold;
+}
+
+.agregar {
+	margin-left: 40px;
+	background-color: rgb(135, 112, 16) !important;
+	color: white !important;
+	font-size: 16px !important;
+	border-radius: 10px !important;
+	box-shadow: 0px 2px 3px 3px !important;
+}
+
+.dropdown-menu {
+	padding: 20px !important;
+}
+
+.dropdown-toggle {
+	margin-top: 15px;
+}
+
+.formConsulta, .boxFacebook {
+	margin-top: 25px;
+}
+.formConsulta1 {
+	background-image: url('../images/Primera.jpg');
+	padding: 15px;
+	margin-top: 20px;
+}
+label {
+	color: white;
+	font-size: 20px;
+}
+
+footer {
+	background-color: rgba(222, 191, 61, 0.6);
+	color: #817944;
+	margin-top: 35px;
+	margin-bottom: 25px;
+	padding: 10px 0px 10px 0px;
+	font-size: 15px;
+	border-radius: 10px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.listFooter>li {
+	padding-top: 20px;
+}
+.logoFooter {
+	padding-left: 70px;
+	padding-top: 10px;
+}
+
+.formConsulta1>.form-group>.form-control {
+	box-shadow: 5px 0px 5px 5px rgba(27, 27, 28, 0.76) !important;
+}
+
+.ver {
+	float: right;
+}
+
+.active {
+	background-color: rgba(196, 192, 138, 0.33) !important;
+	/*text-decoration: underline;*/
+}
+.glyphicon-chevron-left::before, .glyphicon-chevron-right::before{
+	color: white;
+}
+
+.logosRedes, .logosNav{
+	margin-top: 10px;
+}
