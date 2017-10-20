@@ -1,0 +1,55 @@
+.jugador {
+ width: 500px;
+ height: 600px;
+ background: url('../images/idle.png') left center;
+ animation: wait .8s steps(10) infinite;
+}
+
+@keyframes wait {
+	100% { background-position: -5960px; }
+}
+
+.jump {
+  background-image: url('../images/jump.png');
+  animation: jump .8s steps(10);
+}
+
+@keyframes jump {
+	100% { background-position: -5960px; }
+}
+
+.atack {
+  background-image: url('../images/atack.png');
+  animation: atack .8s steps(10);
+}
+
+@keyframes atack {
+	100% { background-position: -5960px; }
+}
+
+.dead {
+  background-image: url('../images/dead.png');
+  animation: dead .8s steps(10);
+}
+
+@keyframes dead {
+	100% { background-position: -9530px; }
+}
+
+.run {
+  background-image: url('../images/run.png');
+  animation: run .8s steps(10);
+}
+
+@keyframes run {
+	100% { background-position: -5960px; }
+}
+
+.walk {
+  background-image: url('../images/walk.png');
+  animation: walk .8s steps(10);
+}
+
+@keyframes walk {
+	100% { background-position: -5960px; }
+}
