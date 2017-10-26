@@ -71,7 +71,7 @@
 }
 
 @keyframes walk-enemy {
-  100% { background-position: -1509px; }
+ 100%{background-position: -1509px;}
 }
 
 #apple1{
@@ -104,10 +104,11 @@
  width: 170px;
  height: 216px;
  background: url('../images/apple.png') left center;
- animation: apple-anim 1s steps(10) infinite;
+ animation: apple-anim 1s steps(1) infinite;
  transform: scale(0.3);
+
 }
 
 @keyframes apple-anim {
-  100% { background-position: -1px; }
+  100% { background-position: 170px; }
 }
