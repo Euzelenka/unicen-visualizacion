@@ -1,0 +1,55 @@
+.idle {
+ width: 140px;
+ height: 160px;
+ z-index: 10;
+ margin-top: 123px;
+ margin-left: 200px;
+ background: url('../images/moves/idle.png') left center;
+ animation: idle .8s steps(10) infinite;
+}
+
+@keyframes idle {
+	100% { background-position: -1509px; }
+}
+
+.jump {
+  width: 140px;
+  height: 170px;
+  margin-top: 123px;
+  margin-left: 200px;
+  background-image: url('../images/moves/jump.png');
+  animation: jump .8s steps(10) infinite;
+}
+
+@keyframes jump {
+  0%{transform: translateY(-0px); }
+ 25%{transform: translateY(-100px); }
+ 50%{transform: translateY(-250px); }
+ 75%{transform: translateY(-150px); }
+ 100%{transform: translateY(-0px);background-position: -1509px;}
+
+}
+
+.dead {
+  width: 240px;
+  height: 180px;
+  background-image: url('../images/moves/dead.png');
+  animation: dead .8s steps(10);
+}
+
+@keyframes dead {
+	100% { background-position: -2373px; }
+}
+
+.walk {
+  width: 130px;
+  height: 170px;
+  margin-top: 123px;
+  margin-left: 200px;
+  background-image: url('../images/moves/walk.png');
+  animation: walk .8s steps(10) infinite;
+}
+
+@keyframes walk {
+	100% { background-position: -1509px; }
+}

@@ -1,0 +1,62 @@
+#contenedor {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../images/heaven.png");
+}
+
+#cloud {
+  width: 100%;
+  height: 500px;
+  z-index: 2;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  background-repeat: repeat-x;
+  background-image: url("../images/cloud2.png");
+  animation: background-layers linear 124s infinite;
+  animation-play-state:running;
+}
+
+#mountain {
+  width: 100%;
+  height: 300px;
+  z-index: 3;
+  padding: 0px;
+  margin-top: 340px;
+  position: absolute;
+  animation: background-layers 50s infinite;
+  background-image: url("../images/mountain2.png");
+  animation-play-state:paused;
+}
+
+#trees {
+  width: 100%;
+  height: 300px;
+  z-index: 4;
+  padding: 0px;
+  position: absolute;
+  background-repeat: repeat-x;
+  animation: background-layers linear 15s infinite;
+  background-image: url("../images/arbol6.png");
+  animation-play-state:paused;
+}
+
+#floor {
+  width: 100%;
+  height: 307px;
+  padding: 0px;
+  z-index: 5;
+  position: absolute;
+  background-repeat: repeat-x;
+  animation: background-layers linear 8s infinite;
+  background-image: url("../images/pasto2.png");
+  animation-play-state:paused;
+}
+
+@keyframes background-layers {
+  0%{background-position-x: 0px;}
+  100%{background-position-x: -2080px;}
+}

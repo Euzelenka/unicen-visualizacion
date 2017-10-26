@@ -1,55 +1,70 @@
-.jugador {
- width: 500px;
- height: 600px;
- background: url('../images/idle.png') left center;
- animation: wait .8s steps(10) infinite;
+#index {
+  background-image: url('../images/fondo.jpg');
+  background-size: 100%;
 }
 
-@keyframes wait {
-	100% { background-position: -5960px; }
+#instrucciones {
+  margin-left: 30px;
+  margin-top: 200px;
+  text-align: center;
+  font-style: oblique;
+  font-weight:900;
+  color: white;
+  font-size: 30px;
 }
 
-.jump {
-  background-image: url('../images/jump.png');
-  animation: jump .8s steps(10);
+.playerIndex {
+  width: 140px;
+  height: 160px;
+  margin-left: 200px;
+  margin-top: 90px;
+  background: url('../images/moves/idle.png') left center;
+  animation: idle .8s steps(10) infinite;
 }
 
-@keyframes jump {
-	100% { background-position: -5960px; }
+#botonJugar {
+  margin-left: 500px;
+  font-style: oblique;
+  margin-top: 250px;
 }
 
-.atack {
-  background-image: url('../images/atack.png');
-  animation: atack .8s steps(10);
+#botonInstrucciones {
+  font-style: oblique;
+  margin-left: 500px;
+  margin-top: 50px;
 }
 
-@keyframes atack {
-	100% { background-position: -5960px; }
+button {
+  width: 250px;
+  border: 0;
+  background: #0087cc;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #006599;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  outline: 0;
+  padding: 12px 20px;
+  transition: all .1s linear;
 }
 
-.dead {
-  background-image: url('../images/dead.png');
-  animation: dead .8s steps(10);
+button:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
 }
 
-@keyframes dead {
-	100% { background-position: -9530px; }
+.enemy {
+  width: 130px;
+  height: 170px;
+  background-image: url('../images/moves/enemy2.png');
+  animation: walk-enemy .8s steps(10) infinite;
+  transform: scaleX(-1);
 }
 
-.run {
-  background-image: url('../images/run.png');
-  animation: run .8s steps(10);
+@keyframes walk-enemy {
+  100% { background-position: -1509px; }
 }
 
-@keyframes run {
-	100% { background-position: -5960px; }
-}
-
-.walk {
-  background-image: url('../images/walk.png');
-  animation: walk .8s steps(10);
-}
-
-@keyframes walk {
-	100% { background-position: -5960px; }
+.apple {
+  background-image: url('../images/apple.png');
 }
