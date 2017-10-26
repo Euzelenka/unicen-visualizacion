@@ -53,3 +53,61 @@
 @keyframes walk {
 	100% { background-position: -1509px; }
 }
+
+#enemy {
+  top: 530px;
+  left: 1600px;
+  position: fixed;
+  overflow: hidden;
+}
+
+.enemy-walk {
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/moves/enemy2.png');
+  animation: walk-enemy .8s steps(10) infinite;
+  transform: scaleX(-1);
+
+}
+
+@keyframes walk-enemy {
+  100% { background-position: -1509px; }
+}
+
+#apple1{
+  top: 10px;
+  left: 660px;
+}
+
+#apple2{
+  top:80px;
+  left:1900px;
+}
+
+#apple3{
+  top:90px;
+  left:1750px;
+}
+
+#apple4{
+  top:90px;
+  left:1400px;
+}
+
+#apple5{
+  top:100px;
+  left:1400px;
+}
+
+.apple {
+ position: absolute;
+ width: 170px;
+ height: 216px;
+ background: url('../images/apple.png') left center;
+ animation: apple-anim 1s steps(10) infinite;
+ transform: scale(0.3);
+}
+
+@keyframes apple-anim {
+  100% { background-position: -1px; }
+}

@@ -52,19 +52,3 @@ button:active {
   box-shadow: 0 2px 0 #006599;
   transform: translateY(3px);
 }
-
-.enemy {
-  width: 130px;
-  height: 170px;
-  background-image: url('../images/moves/enemy2.png');
-  animation: walk-enemy .8s steps(10) infinite;
-  transform: scaleX(-1);
-}
-
-@keyframes walk-enemy {
-  100% { background-position: -1509px; }
-}
-
-.apple {
-  background-image: url('../images/apple.png');
-}
