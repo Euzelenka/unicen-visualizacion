@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gallery images</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/hashtag_icon.png" class="img-responsive icon d-inline-block align-top"  alt="">
+    </a>
+
+    <div class="">
+      <button class=" btn btn-secondary help" type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question" aria-hidden="true"></i></button>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- #container-->
+  <div class="container">
+    <div class="row justify-content-md-center input-search">
+      <!-- #search-bar-->
+      <div class="col-md-8">
+        <div class="input-group">
+          <input id="tweet-search" type="text" class="form-control" placeholder="# Busca tu tweet..">
+          <span class="input-group-btn">
+            <a href="carousel.html"><button class="btn btn-secondary" type="button" id="tweet"><i class="fa fa-search" aria-hidden="true"></i></button></a>
+          </span>
+        </div>
+      </div>
+      <!-- #end search-bar-->
+      <div class="col-md-8 col-md-offset-4" id="content">
+        <ul id="lista-img">
+        </ul>
+      </div>
+    </div>
+  <!-- # end content-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ayuda #Fotos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Aca iria la ayuda, pero anda a preguntarle a mahoma
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <p>Interfaces - Silvina Muñoz | Eugenia Zelenka</p>
+  </footer>
+
+  <script src="js/jquery-3.2.1.js" charset="utf-8"></script>
+  <script src="js/popper.min.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/codebird.js" charset="utf-8"></script>
+  <script src="js/master.js" charset="utf-8"></script>
+
+</body>
+</html>
