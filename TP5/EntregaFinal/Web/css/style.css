@@ -8,6 +8,7 @@ h3{
 }
 .navbar{
 	justify-content: flex-start;
+	padding: 0px;
 	height: 50px;
 }
 
@@ -66,7 +67,7 @@ li{
 
 .search-bar{
 	width: 300px;
-	margin-left: 650px;
+	left: 660px;
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
@@ -148,10 +149,6 @@ footer{
 	margin-top: 18%;
 }
 
-.containerNav {
-	width: 100%;
-}
-
 .card{
 	margin: 10%;
 }
@@ -192,4 +189,12 @@ a>.icon-display{
 	position: fixed;
 	margin-top: -8px;
 	margin-left: -5px;
+}
+
+.titulo {
+	position: absolute;
+	left: 100px;
+	font-size: 30px;
+	color: #605b59;
+	font-family: 'Pacifico', cursive;
 }
