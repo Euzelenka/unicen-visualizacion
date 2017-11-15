@@ -4,7 +4,12 @@
   height: 100%;
   margin: 0px;
   padding: 0px;
+  position: relative;
   background-image: url("../images/heaven.png");
+}
+
+#contenedor div {
+  position: absolute;
 }
 
 #cloud {

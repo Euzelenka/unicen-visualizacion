@@ -2,8 +2,6 @@
  width: 140px;
  height: 160px;
  z-index: 10;
- margin-top: 123px;
- margin-left: 200px;
  background: url('../images/moves/idle.png') left center;
  animation: idle .8s steps(10) infinite;
 }
@@ -15,18 +13,12 @@
 .jump {
   width: 140px;
   height: 170px;
-  margin-top: 123px;
-  margin-left: 200px;
   background-image: url('../images/moves/jump.png');
   animation: jump .8s steps(10) infinite;
 }
 
 @keyframes jump {
-  0%{transform: translateY(-0px); }
- 25%{transform: translateY(-100px); }
- 50%{transform: translateY(-250px); }
- 75%{transform: translateY(-150px); }
- 100%{transform: translateY(-0px);background-position: -1509px;}
+  0%{background-position: -1509px;}
 
 }
 
@@ -34,7 +26,9 @@
   width: 240px;
   height: 180px;
   background-image: url('../images/moves/dead.png');
-  animation: dead .8s steps(10);
+  animation: dead 0.8s steps(10);
+  animation-iteration-count: 0.9;
+  animation-fill-mode: forwards;
 }
 
 @keyframes dead {
@@ -44,8 +38,6 @@
 .walk {
   width: 130px;
   height: 170px;
-  margin-top: 123px;
-  margin-left: 200px;
   background-image: url('../images/moves/walk.png');
   animation: walk .8s steps(10) infinite;
 }
@@ -54,61 +46,39 @@
 	100% { background-position: -1509px; }
 }
 
-#enemy {
-  top: 530px;
-  left: 1600px;
-  position: fixed;
-  overflow: hidden;
-}
-
 .enemy-walk {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 178px;
   background-image: url('../images/moves/enemy2.png');
   animation: walk-enemy .8s steps(10) infinite;
   transform: scaleX(-1);
-
 }
+
 
 @keyframes walk-enemy {
- 100%{background-position: -1509px;}
+ 100%{background-position: -1506px;}
 }
 
-#apple1{
-  top: 10px;
-  left: 660px;
+.enemy-idle {
+  height: 173px;
+  width: 128px;
+  background: url('../images/moves/enemy-stop.png');
+  animation: idle-enemy .8s steps(15) infinite;
+  transform: scaleX(-1);
 }
 
-#apple2{
-  top:80px;
-  left:1900px;
+@keyframes idle-enemy {
+ 100%{background-position: -2260px;}
 }
 
-#apple3{
-  top:90px;
-  left:1750px;
-}
-
-#apple4{
-  top:90px;
-  left:1400px;
-}
-
-#apple5{
-  top:100px;
-  left:1400px;
-}
-
-.apple {
- position: absolute;
- width: 170px;
- height: 216px;
- background: url('../images/apple.png') left center;
- animation: apple-anim 1s steps(1) infinite;
+#coin {
+ width: 90px;
+ height: 90px;
+ background: url('../images/coin.png') left center;
+ animation: coin .8s steps(10) infinite;
  transform: scale(0.3);
-
 }
 
-@keyframes apple-anim {
-  100% { background-position: 170px; }
+@keyframes coin {
+ 100%{background-position: -1000px;}
 }
