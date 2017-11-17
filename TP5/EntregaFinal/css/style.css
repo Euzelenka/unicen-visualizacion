@@ -57,6 +57,7 @@ h3{
 .input-search {
 	margin-top: 200px;
 	border-radius: 100px;
+	margin-bottom: 250px;
 }
 
 ul{
@@ -91,18 +92,6 @@ button>i>.fa>.fa-question{
  	margin-top: -8px;
  	margin-left: -5px;
  }
-
-/*.input-group{
-	animation: width 2s linear;
-}
-
-@keyframes width {
-	from {
-	}
-	to {
-		width: 50%;
-	}
-}*/
 
 .tweet-search, .tweet-searchC{
 	border-radius: 15px !important;
@@ -146,6 +135,8 @@ margin-left: 4px;
 	background-color: rgba(72, 75, 71, 0.74);
 	color: white;
 	padding: 10px;
+	border-radius: 7px;
+	cursor: pointer;
 }
 
 .fa-chevron-right{
@@ -154,6 +145,9 @@ margin-left: 4px;
 	padding: 10px;
 	background-color: rgba(72, 75, 71, 0.74);
 	color: white;
+	border-radius: 7px;
+	cursor: pointer;
+
 }
 
 .fa-step-backward, .fa-play , .fa-step-forward,  .fa-pause{
@@ -161,6 +155,7 @@ margin-left: 4px;
 	padding: 10px;
 	width: 100px;
 	color: white;
+	cursor: pointer;
 }
 
 
@@ -189,30 +184,33 @@ margin-left: 4px;
 	text-shadow: 0 0 10px #222,1px 1px  0 #450505;
 	animation: latidos .5s infinite;
 	transform-origin: center;*/
-
-	position: relative;
 	margin: 10px;
 	color: white;
 }
 
 .likes {
-	position: relative;
 	margin: 10px;
 	color: white;
 }
 
+
 .info {
 	position: relative;
 	top: 545px;
-	width: 100px;
+	width: 50px;
 	left: 30px;
 	background-color: rgba(72, 75, 71, 0.74);
+	text-align: center;
+	border-radius: 7px;
+	display: inline-block;
 }
 
 .controls {
 	position: absolute;
 	margin: 450px 0px 0px 250px;
 	background-color: rgba(72, 75, 71, 0.74);
+	border-radius: 7px;
+
 }
 
 .icons{

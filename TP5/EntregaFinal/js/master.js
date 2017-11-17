@@ -41,6 +41,7 @@ function searchTweets(params) {
 
   event.preventDefault();
   $('.loading').show();
+  $('#footer').hide();
   $(".index").hide();
   $(".small-nav").show();
 
@@ -73,9 +74,8 @@ function searchTweets(params) {
         }
         for (var i = 0; i < photosArray.length; i++) {
           $('.loading').hide();
+          $('#footer').show();
           $(".carousel").show();
-
-
           $('.d-block').css({
             "width": "900",
             "height":"550"
@@ -144,13 +144,13 @@ function next() {
 let superplay='';
 $('#play').click(function(event){
   if ($('#play').attr('habilitado')=='si'){
-  superplay=setInterval("next()",6000);
+  superplay=setInterval("next()",5000);
   $('#play').attr('habilitado','no');
 }
 });
 
 $('#pause').click(function(event){
-  if ($('#play').attr('habilitado')=='no'){
+  if ($('#play').attr('habilitado') =='no'){
   clearInterval(superplay);
   $('#play').attr('habilitado','si');
 }
@@ -207,6 +207,8 @@ $('.fa-picture-o').click(function(event){
 $('.fa-th').click(function(event){
   event.preventDefault();
   $(".carousel").hide();
+  $('#footer').hide();
+  $('.pag').hide();
   $('.grid').show();
   $(".card-img-top").css('transition:','width','300px');
 let params = {
@@ -285,6 +287,7 @@ function searchTweetsGrid(params) {
        }
        for (var i = 0; i < 6; i++) {
          $('.loading').hide();
+         $('.pag').show();
          $('.grid-image').append('<div class="card" style="width: 15rem;"><img class="card-img-top img-thumbnail" src="'+photosArray[i].src+'"></div>');
        }
      }
@@ -292,12 +295,19 @@ function searchTweetsGrid(params) {
  )
 }
 
+function firstImages() {
+  $('.grid-image').empty();
+  for (var i = 0; i < 6; i++) {
+    $('.loading').hide();
+    $('.grid-image').append('<div class="card" style="width: 15rem;"><img class="card-img-top img-thumbnail" src="'+photosArray[i].src+'"></div>');
+  }
+}
+
 $('#link-1').click(function(event) {
- $('.grid-image').empty();
- for (var i = 0; i < 6; i++) {
-   $('.loading').hide();
-   $('.grid-image').append('<div class="card" style="width: 15rem;"><img class="card-img-top img-thumbnail" src="'+photosArray[i].src+'"></div>');
- }
+  firstImages();
+})
+$('.previous').click(function(event) {
+  firstImages();
 })
 
 $('#link-2').click(function(event) {
