@@ -10,10 +10,12 @@ function update() {
     player.update();
     coin.update()
     enemy.update();
-    if(player.colision(coin)) {
-      player.
+    if(player.colisionCoin(coin)) {
+      player.coins = player.coins+10;
+      document.getElementById('score-num').innerHTML=player.coins;
+      coin.div.style.opacity = 0;
     }
-    if(player.colision(enemy)) {
+    if(player.colisionEnemy(enemy)) {
       player.state = 'dead';
     }
   }
@@ -36,16 +38,18 @@ document.onkeydown = function(e) {
 
   switch(event.keyCode) {
     case 65:
-        if(player.estaEnElPiso) {
+        if(player.estaEnElPiso && player.state!='dead') {
             player.moveBackground();
             player.estaEnElPiso = false;
-            player.aplicarFuerza(-14);
+            player.aplicarFuerza(-12);
             player.state = 'jump';
         }
         break;
     case 83:
+      if(player.estaEnElPiso && player.state!='dead') {
         player.state = 'walk';
         player.moveBackground();
+      }
   }
 }
 
@@ -57,7 +61,7 @@ document.onkeyup = function(e) {
           player.stopBackground();
           break;
       case 65:
-          if(player.estaEnElPiso) {
+          if(player.estaEnElPiso && player.state!='dead') {
             player.state = 'idle';
             player.stopBackground();
           }

@@ -67,10 +67,24 @@ class Player {
     }
   }
 
-  colision(other) {
-    let oLeft = other.left;
-    let oRight = other.right;
-    let oTop = other.top;
+
+
+  colisionCoin(other) {
+    if(other.div.style.opacity==1){
+      let oLeft = other.left+80;
+      let oRight = other.right;
+      let oTop = other.top;
+      let oBottom = other.bottom;
+      return !(this.left > oRight || this.right < oLeft || this.top > oBottom || this.bottom < oTop);
+    }else {
+    return false;
+  }
+  }
+
+  colisionEnemy(other) {
+    let oLeft = other.left+30;
+    let oRight = other.right-20;
+    let oTop = other.top+50;
     let oBottom = other.bottom;
     return !(this.left > oRight || this.right < oLeft || this.top > oBottom || this.bottom < oTop);
   }

@@ -11,7 +11,7 @@ class Coin {
 
   }
 
-  
+
 
   draw() {
     this.div.style.left = this.posX.toString() + 'px';
@@ -26,8 +26,9 @@ class Coin {
     this.right = this.posX + this.div.offsetWidth;
     this.bottom = this.posY + this.div.offsetHeight;
     if(this.posX < -200) {
+      this.div.style.opacity=1;
       this.posX = 1200;
-      this.posY = Math.floor((Math.random() * 100) + 190);
+      this.posY = Math.floor((Math.random() * 100) + 150);
     }
   }
 

@@ -75,10 +75,10 @@
  width: 90px;
  height: 90px;
  background: url('../images/coin.png') left center;
- animation: coin .8s steps(10) infinite;
+ animation: coin-rotation .8s steps(10) infinite;
  transform: scale(0.3);
 }
 
-@keyframes coin {
+@keyframes coin-rotation {
  100%{background-position: -1000px;}
 }
