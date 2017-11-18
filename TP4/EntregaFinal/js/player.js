@@ -15,7 +15,26 @@ class Player {
     this.top = this.posY;
     this.right = this.posX + this.div.offsetWidth;
     this.bottom = this.posY + this.div.offsetHeight;
+    this.vidas = 3;
   }
+
+  resetear() {
+    this.posX = 300;
+    this.posY = pisoY;
+    this.aceleracionY = 0;
+    this.velocidadY = 0;
+    this.div = document.getElementById('player');
+    this.state = 'idle';
+    this.estaEnElPiso = true;
+    this.coins = 0;
+    this.left = this.posX;
+    this.top = this.posY;
+    this.right = this.posX + this.div.offsetWidth;
+    this.bottom = this.posY + this.div.offsetHeight;
+    this.vidas = 3;
+  }
+
+
 
   draw() {
     switch (this.state) {

@@ -11,8 +11,6 @@ class Coin {
 
   }
 
-
-
   draw() {
     this.div.style.left = this.posX.toString() + 'px';
     this.div.style.top = this.posY.toString() + 'px';

@@ -1,5 +1,6 @@
 body{
   overflow: hidden;
+  font-family: 'Indie Flower', cursive;
 }
 
 #index {
@@ -8,34 +9,49 @@ body{
 }
 
 #instrucciones {
-  margin-left: 30px;
-  margin-top: 200px;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: grey;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   text-align: center;
   font-style: oblique;
   font-weight:900;
   color: white;
+  opacity: 0.7;
   font-size: 30px;
+}
+
+.playerInstrucciones {
+  width: 140px;
+  height: 160px;
+  margin-left: 200px;
+  background: url('../images/moves/idle.png') left center;
+  animation: idle .8s steps(10) infinite;
 }
 
 .playerIndex {
   width: 140px;
   height: 160px;
   margin-left: 200px;
-  margin-top: 90px;
+  margin-top: 70px;
   background: url('../images/moves/idle.png') left center;
   animation: idle .8s steps(10) infinite;
 }
 
 #botonJugar {
-  margin-left: 500px;
+  margin-left: 41%;
   font-style: oblique;
   margin-top: 250px;
+  font-size: 23px;
 }
 
 #botonInstrucciones {
   font-style: oblique;
-  margin-left: 500px;
+  margin-left: 41%;
   margin-top: 50px;
+  font-size: 23px;
 }
 
 button {
@@ -57,7 +73,55 @@ button:active {
   transform: translateY(3px);
 }
 
-.score{
+.score {
   font-size: 30px;
   padding: 15px;
+}
+#vidas {
+  position: relative;
+  margin-left: 80%;
+  padding: 15px;
+  z-index: 10;
+}
+
+#vidas img {
+    width: 25%;
+    height: 25%;
+}
+
+#mensaje {
+  display: none;
+
+  margin-top: 100px;
+  padding: 20px;
+  background-color: rgba(128,128,128,0.8);
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  font-style: oblique;
+  font-weight:900;
+  color: white;
+  font-size: 30px;
+  z-index: 10;
+
+}
+
+.btn-menu{
+
+  font-style: oblique;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+#botonVolver {
+  margin-left: 41%;
+  font-style: oblique;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+.key-image{
+  width: 40px;
+  height: 40px;
 }

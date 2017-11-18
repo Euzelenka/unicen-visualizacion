@@ -10,9 +10,21 @@
   </head>
 
   <body id="contenedor">
-
+    <div id="vidas">
+      <img src="images/heart.png" id="vida0" alt="">
+      <img src="images/heart.png" id="vida1" alt="">
+      <img src="images/heart.png" id="vida2" alt="">
+    </div>
     <div id="cloud">
       <div class="score">Puntos <span id="score-num">0</span></div>
+
+      <div id="mensaje">
+        <p>GAME OVER</p>
+        <p>PUNTOS:<span id="score-num">0</span></p>
+        <button type="button" class="btn-menu" id="btn-menu" name="button">MENU</button>
+        <button type="button" class="btn-menu" id="btn-reiniciar" name="button">REINICIAR</button>
+      </div>
+
       <div id="mountain">
         <div id="trees">
             <div id="floor">
