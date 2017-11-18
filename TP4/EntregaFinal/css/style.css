@@ -41,6 +41,7 @@ body{
 }
 
 #botonJugar {
+  font-weight:900;
   margin-left: 41%;
   font-style: oblique;
   margin-top: 250px;
@@ -48,6 +49,7 @@ body{
 }
 
 #botonInstrucciones {
+  font-weight:900;
   font-style: oblique;
   margin-left: 41%;
   margin-top: 50px;
@@ -119,6 +121,7 @@ button:active {
   font-style: oblique;
   font-size: 23px;
   margin-top: 20px;
+  font-weight:900;
 }
 
 .key-image{
