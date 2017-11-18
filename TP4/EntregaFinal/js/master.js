@@ -22,6 +22,7 @@ function update() {
         if(player.vidas == 0){
       player.state = 'dead';
       document.getElementById('mensaje').style.display="block";
+      document.getElementById('score-mensaje').innerHTML = player.coins;
      }
     }
   }
